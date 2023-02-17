@@ -30,7 +30,7 @@ contract VerifySig{
             ));
     }
 
-    function recover(bytes32 _ethSignedMessageHash, bytes memoryy _sig)
+    function recover(bytes32 _ethSignedMessageHash, bytes memory _sig)
     public pure returns (address)
     {
         (bytes32 r, bytes32 s, uint8 v) = _split(_sig);
