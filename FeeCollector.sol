@@ -16,6 +16,8 @@ contract FeeCollector{
 
     function withdraw(uint amount , address payable destAddr)public{
         require(msg.sender == owner, "Only owner can withdraw");
+        require(msg.sender == owner, "Only owner can withdraw");
+        require (amount <= balance, 'Insuffucient funds');
         destAddr.transfer(amount);
         balance -= amount;
     }
