@@ -14,6 +14,11 @@ contract CrowdFund{
         uint32 endAt;
         bool claimed;
     }
+    
+        IERC20 public immutable token;
+    uint public count;
+    mapping(uint=> Campign) public campigns;
+    mapping(uint => mapping(address => uint)) public pledgedAmount;
 
 
     function launch(
