@@ -14,4 +14,10 @@ contract Bank{
      return balances[msg.sender];
  }
  
+ 
+ function checkBlockTimestamp() public view returns(uint){
+     return block.timestamp;
+ }
+ 
+ 
 }
