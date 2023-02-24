@@ -8,7 +8,14 @@ contract Todo{
         string name;
         bool status;
     }
+    
+    Task[] tasks;
 
+    function addTask(string memory taskName)public {
+        Task memory task;
+        task.name = taskName;
 
+        tasks.push(task);
+    }
     
 }
