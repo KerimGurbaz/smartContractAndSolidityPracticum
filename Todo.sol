@@ -18,4 +18,9 @@ contract Todo{
         tasks.push(task);
     }
     
+       function updateStatus(uint index) public{
+        tasks[index].status = !tasks[index].status;
+    }
+
+    
 }
