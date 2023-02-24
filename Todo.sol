@@ -26,6 +26,11 @@ contract Todo{
     function updateName( uint index , string memory newName) public {
         tasks[index].name = newName;
     }
+    
+    function list() public view returns(Task[] memory){
+        return tasks;
+    }
+
 
     
 }
