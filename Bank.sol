@@ -6,6 +6,12 @@ contract Bank{
     mapping (address => uint) balances;
 
     function deposit() public {
+     balances[msg.sender] += _amount;
         
     }
+    
+     function checkUserBalance() public view returns(uint){
+     return balances[msg.sender];
+ }
+ 
 }
