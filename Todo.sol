@@ -21,6 +21,11 @@ contract Todo{
        function updateStatus(uint index) public{
         tasks[index].status = !tasks[index].status;
     }
+    
+    
+    function updateName( uint index , string memory newName) public {
+        tasks[index].name = newName;
+    }
 
     
 }
