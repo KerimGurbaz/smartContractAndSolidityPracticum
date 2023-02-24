@@ -30,6 +30,15 @@ contract Todo{
     function list() public view returns(Task[] memory){
         return tasks;
     }
+    
+     function removeTask(uint index) public { // removing Items
+        for(uint i = index; i<tasks.length -1 ; i++){
+            tasks[i] = tasks[i+1];
+        }
+        
+        tasks.pop();
+        
+    }
 
 
     
