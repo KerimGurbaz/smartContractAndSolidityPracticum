@@ -19,5 +19,16 @@ contract Bank{
      return block.timestamp;
  }
  
+  function withdraw(uint _amount) public{
+     require(_amount > 0, "please increase your amount");
+     balances[msg.sender] -=_amount;
+     payable (msg.sender).transfer(_amount);
+     
+ }
+
+ function checkUserBalance() public view returns(uint){
+     return balances[msg.sender];
+ }
+ 
  
 }
