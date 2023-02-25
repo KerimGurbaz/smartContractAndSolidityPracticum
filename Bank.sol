@@ -20,7 +20,7 @@ contract Bank{
  }
  
   function withdraw(uint _amount) public{
-     require(_amount > 0, "please increase your amount");
+     require(balances[msg.sender] >= amount, "You haven't got enough balance");
      balances[msg.sender] -=_amount;
      payable (msg.sender).transfer(_amount);
      
@@ -29,6 +29,13 @@ contract Bank{
  function checkUserBalance() public view returns(uint){
      return balances[msg.sender];
  }
+ 
+  function transfer(address receiver, uint amount) public {
+     require(balances[msg.sender] >= amount, "You haven't got enough balance");
+     balances[msg.sender] -= amount ;// sender
+     balances[receiver] += amount;
+ }
+ 
  
  
 }
