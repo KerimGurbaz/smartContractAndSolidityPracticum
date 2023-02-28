@@ -7,6 +7,13 @@ import './IERC20.sol';
 contract CrowdFund{
 
 contract CrowdFund{
+    event Launch(
+        uint id,
+        address indexed creator,
+        uint goal,
+        uint32 startAt,
+        uint32 endAt
+    );
     struct Campaign{
         address creator;
         uint goal;
