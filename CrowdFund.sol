@@ -32,6 +32,8 @@ contract CrowdFund{
         uint32 _startAt,
         uint32 _endAt
     ) external{
-        
+        require(_startAt >= block.timestamp, "start at < now");
+        require(_endAt >= _startAt, "end at < start at");
+        require(_endAt <= block.timestamp + 90 days, "end at > max duration");
     }
 }
