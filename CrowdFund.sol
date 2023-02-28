@@ -19,6 +19,12 @@ contract CrowdFund{
     uint public count;
     mapping(uint=> Campign) public campigns;
     mapping(uint => mapping(address => uint)) public pledgedAmount;
+    
+    
+    constructor(address _token){
+
+        token = IERC20(_token);
+    }
 
 
     function launch(
