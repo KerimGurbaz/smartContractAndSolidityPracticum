@@ -94,4 +94,18 @@ contract CrowdFund{
         emit Unpledge(_id, msg.sender, _amount);
     }
     
+        function claim(uint _id) external{
+
+        Campaign storage campaign = campaigns[_id];
+        require(msg.sender == campaign.creator, "not creator");
+        require(block.timestamp > campaign.endAt, "not ended");
+        require(campaign.pledged >= campaign.goal, "pledged < goal");
+        require(!campaign.claimed, "claimed");
+
+        campaign.claimed = true;
+        token.transfer(msg.sender, campaign.pledged);
+
+        emit Claim(_id)
+    }
+    
 }
