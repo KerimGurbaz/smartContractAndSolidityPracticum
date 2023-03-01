@@ -14,6 +14,9 @@ contract CrowdFund{
         uint32 startAt,
         uint32 endAt
     );
+    
+     event Cancel (uint id);
+     
     struct Campaign{
         address creator;
         uint goal;
@@ -55,5 +58,13 @@ contract CrowdFund{
         });
         emit Launch(count, msg.sender, _goal, _startAt, _endAt
         );
+    }
+    
+        function cancel(uint _id) external{
+        Campaign memory campaign = campaigns[_id];
+        require(msg.sender == campaign.creator, "not creator");
+        require(block.timestamp < campaign.startAt, "started");
+        delete campaigns[_id];
+        emit Cancel(_id);
     }
 }
