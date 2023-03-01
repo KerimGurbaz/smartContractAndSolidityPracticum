@@ -82,4 +82,15 @@ contract CrowdFund{
 
     }
     
+        function unpledge(uint _id, uint _amount) external{
+        Campaign storage campaign = campaigns[_id];
+        require(block.timestap <= campaign.endAt, "ended");
+
+        campaign.pledged -= _amount;
+        pledgedAmount[_id][msg.sender] -= _amount;
+        token.transfer(msg.sender, _amount);
+
+        emit Unpledge(_id, msg.sender, _amount);
+    }
+    
 }
