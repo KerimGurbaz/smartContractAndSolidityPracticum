@@ -19,6 +19,7 @@ contract CrowdFund{
      event Pledge(uint indexed id, address indexed caller, uint amount);
      event Unpledge(uint indexed id, address indexed caller, uint amount);
      event Claim(uint id);
+     event Refund(uint indexed id, address indexed caller, uint amount);
      
     struct Campaign{
         address creator;
