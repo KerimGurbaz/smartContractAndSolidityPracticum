@@ -18,6 +18,7 @@ contract CrowdFund{
      event Cancel (uint id);
      event Pledge(uint indexed id, address indexed caller, uint amount);
      event Unpledge(uint indexed id, address indexed caller, uint amount);
+     event Claim(uint id);
      
     struct Campaign{
         address creator;
@@ -105,7 +106,7 @@ contract CrowdFund{
         campaign.claimed = true;
         token.transfer(msg.sender, campaign.pledged);
 
-        emit Claim(_id)
+        emit Claim(_id);
     }
     
 }
