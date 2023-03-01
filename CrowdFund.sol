@@ -16,6 +16,7 @@ contract CrowdFund{
     );
     
      event Cancel (uint id);
+     event Pledge(uint indexed id, address indexed caller, uint amount);
      
     struct Campaign{
         address creator;
