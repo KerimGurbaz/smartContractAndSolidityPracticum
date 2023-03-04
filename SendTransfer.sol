@@ -29,4 +29,7 @@ contract ReceiverAction{
         balanceReceived += msg.value;
     }
 
-   
+    function balance() public view returns(uint){
+        return address(this).balance;
+    }
+}
