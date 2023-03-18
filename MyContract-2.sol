@@ -8,3 +8,10 @@ contract MyContract {
         myString = _myString;
     }
 }
+contract MyFactory {
+    event ContractCreated(address indexed newContract);
+
+    function createContract(string memory _myString) public {
+        address newContract = address(new MyContract(_myString));
+        emit ContractCreated(newContract);
+    }
