@@ -15,3 +15,12 @@ contract MyFactory {
         address newContract = address(new MyContract(_myString));
         emit ContractCreated(newContract);
     }
+    function createContractWithTryCatch(string memory _myString) public {
+        try new MyContract(_myString) returns (MyContract myContract) {
+            address newContract = address(myContract);
+            emit ContractCreated(newContract);
+        } catch (bytes memory error) {
+            // handle error
+        }
+    }
+}
