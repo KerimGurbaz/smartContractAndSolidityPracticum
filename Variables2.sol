@@ -9,4 +9,8 @@ contract Variables{
         uint localUnit = 10;
         return a + localUnit;
     }
+    
+     function globalVariales() public view returns(address, uint, uint){
+     return (msg.sender, block.timestamp, block.number);
+    }
 }
