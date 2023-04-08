@@ -8,7 +8,7 @@ contract Functions{
         return stateString;
     }
     
-        function add(uint a, uint b) public pure returns(uint){
+        function add(uint a, uint b) public view returns(uint){
         return a + b;
     }
 }
