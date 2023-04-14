@@ -21,5 +21,12 @@ contract ControlStructures{
         }
         return sum;
     }
-    
+        function whileLoop(uint number) public pure returns(uint){
+        uint count = 0;
+        while(number !=0 ){
+            count ++;
+            number --;
+        }
+        return count;
+    }
 }
