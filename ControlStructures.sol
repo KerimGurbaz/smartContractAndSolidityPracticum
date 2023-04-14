@@ -11,6 +11,15 @@ contract ControlStructures{
         return x-1;
     }
     
-    
+        function forLoop(uint stop) public pure returns(uint){
+        uint sum = 0;
+        for(uint i=0; i<10; i++){
+            sum +=i;
+            if(stop == i){
+                break;
+            }
+        }
+        return sum;
+    }
     
 }
