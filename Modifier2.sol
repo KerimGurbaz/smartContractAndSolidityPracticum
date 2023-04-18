@@ -6,3 +6,9 @@ contract ModifierExample{
         owner = msg.sender;
         myNumber = _myNumber;
     }
+
+    modifier nlyOwnerOrAddress(address _allowedAddress){
+        require(msg.sender == owner || msg.sender == _allowedAddress, "Only the owner or an allowed address can call this function");
+        _;
+    }
+}
