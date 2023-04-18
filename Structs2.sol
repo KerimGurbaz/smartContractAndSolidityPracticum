@@ -15,5 +15,13 @@ contract Structs{
         User memory user1 = User("Joe", 34 , msg.sender);
         User memory user2 = User({name: "Alice", age:23}, wallet:msg.sender);
         User memory user3;
+        
+        user3.name = "John";
+        user3.age = 43;
+        user3.wallet = msg.sender;
+
+        users.push(user1);
+        users.push(user2);
+        users.push(user3);
     }
 }
