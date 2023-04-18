@@ -11,4 +11,8 @@ contract ModifierExample{
         require(msg.sender == owner || msg.sender == _allowedAddress, "Only the owner or an allowed address can call this function");
         _;
     }
+    
+        function changeNumber(uint _newNumber) public onlyOwnerOrAddress(address(0x456)){
+        myNumber = _newNumber;
+    }
 }
