@@ -15,5 +15,18 @@ contract Error2{
     }
 
 
+    function add(uint x, uint y) public pure returns(uint){
+        uint result = x + y;
+
+        if(result < x || result < y){
+            revert("result overflowed"); // revert statement to handle overflow
+        }
+        return result;
+    }
+
+    function divede(uint x, uint y) public pure returns(uint){
+        assert(y != 0); // assert statement to check for division by zero
+        return x/y;
+    }
     
 }
