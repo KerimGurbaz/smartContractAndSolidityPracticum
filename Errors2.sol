@@ -9,6 +9,11 @@ contract Error2{
         require(x !=0, "x cannot be zero"); // require statement to check input
         storedData = x;
     }
+    
+     function get() public view returns(uint){
+        return storedData;
+    }
+
 
     
 }
