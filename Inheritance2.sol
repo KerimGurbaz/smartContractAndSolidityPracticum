@@ -9,3 +9,11 @@ contract Parent {
         parentData = _parentData;
     }
 }
+
+contract Child is Parent{
+    uint public childData;
+
+    constructor(uint _parentData, uint _childData) Parent(_parentData){
+        childData = _childData;
+    }
+}
